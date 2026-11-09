@@ -95,13 +95,14 @@
       flex-shrink: 0;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
+      margin-left: -15px; /* Lo desplaza sutilmente hacia la izquierda */
     }
 
     .brand-logo {
-      height: 74px;
+      height: 95px;       /* Aumenta la altura para hacerlo visiblemente mayor (antes 74px) */
       width: auto;
-      max-width: 300px;
+      max-width: 380px;   /* Permite estirarse horizontalmente a lo ancho (antes 300px) */
       object-fit: contain;
       filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
       transition: transform 0.2s ease;
@@ -596,7 +597,7 @@
     <div class="header">
       <div class="header-content">
         <div class="header-text">
-          <h1>Consulta de Certificados Obligatorios</h1>
+          <h1>Consulta de Certificados</h1>
           <p>Selecciona los parámetros de la factura en orden para determinar la documentación requerida.</p>
         </div>
         <div class="header-brand">
