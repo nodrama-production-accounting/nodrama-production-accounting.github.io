@@ -10,8 +10,8 @@
       --primary-light: #1e4b8f;
       --accent: #2563eb;
       --accent-hover: #1d4ed8;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
+      --bg: #0b0f19;
+      --card-bg: rgba(255, 255, 255, 0.95);
       --text-main: #0f172a;
       --text-muted: #64748b;
       --border: #cbd5e1;
@@ -34,27 +34,37 @@
 
     body {
       background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at center, rgba(15, 23, 42, 0.25) 0%, rgba(11, 15, 25, 0.75) 100%),
+        url('fondo.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
       color: var(--text-main);
       display: flex;
       justify-content: center;
-      padding: 32px 16px 48px;
+      padding: 36px 16px 54px;
       min-height: 100vh;
     }
 
     .container {
       width: 100%;
-      max-width: 880px;
+      max-width: 890px;
       background: var(--card-bg);
-      border-radius: 14px;
-      box-shadow: 0 10px 25px -5px rgba(15, 45, 89, 0.08), 0 8px 10px -6px rgba(15, 45, 89, 0.04);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 16px;
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.35);
       overflow: hidden;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255, 255, 255, 0.4);
     }
 
     .header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      background: linear-gradient(135deg, rgba(15, 45, 89, 0.97) 0%, rgba(30, 75, 143, 0.95) 100%);
       color: #ffffff;
-      padding: 26px 32px;
+      padding: 28px 34px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .header h1 {
@@ -72,7 +82,7 @@
     }
 
     .form-container {
-      padding: 30px 32px 28px;
+      padding: 30px 34px 28px;
     }
 
     .grid {
@@ -374,8 +384,8 @@
     .drawer-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(15, 23, 42, 0.45);
-      backdrop-filter: blur(3px);
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -395,7 +405,7 @@
       max-width: 420px;
       height: 100vh;
       background: #ffffff;
-      box-shadow: -8px 0 25px rgba(0, 0, 0, 0.15);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.35);
       z-index: 101;
       display: flex;
       flex-direction: column;
@@ -507,25 +517,15 @@
       background: var(--accent-hover);
     }
 
-    /* Ocultar insignia flotante de Netlify */
-    [class*="netlify-badge"],
-    [id*="netlify-badge"],
-    a[href*="netlify.com"],
-    .netlify-badge,
-    div[data-netlify-deploy-id],
-    iframe[src*="netlify"] {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
+      body {
+        padding: 16px 10px 32px;
+      }
       .form-container {
         padding: 20px 18px;
       }
